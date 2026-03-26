@@ -596,6 +596,14 @@
     .testimonial-author { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--color-text-muted); margin-top: 16px; }
     @media (max-width: 640px) { .testimonials-grid { grid-template-columns: 1fr; gap: 32px; } }
 
+    /* ─── Scroll Reveal ─── */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal-left { opacity:0; transform:translateX(-36px); transition:opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal-right { opacity:0; transform:translateX(36px); transition:opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity:1; transform:translate(0,0); }
+    .reveal-delay-1 { transition-delay:80ms; } .reveal-delay-2 { transition-delay:160ms; } .reveal-delay-3 { transition-delay:240ms; } .reveal-delay-4 { transition-delay:320ms; } .reveal-delay-5 { transition-delay:400ms; }
+    @media (prefers-reduced-motion:reduce) { .reveal,.reveal-left,.reveal-right { opacity:1; transform:none; transition:none; } }
+
     /* ─── Footer ─── */
     footer {
       background: var(--color-charcoal); color: var(--color-offwhite);
@@ -681,17 +689,17 @@
 ══════════════════════════════════════════ -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-item">
+    <div class="trust-item reveal">
       <div class="trust-item-number">Fixed</div>
       <div class="trust-item-label">Price Guarantee</div>
     </div>
     <div class="trust-divider" aria-hidden="true"></div>
-    <div class="trust-item">
+    <div class="trust-item reveal reveal-delay-1">
       <div class="trust-item-number">100+</div>
       <div class="trust-item-label">Dublin Homes Transformed</div>
     </div>
     <div class="trust-divider" aria-hidden="true"></div>
-    <div class="trust-item">
+    <div class="trust-item reveal reveal-delay-2">
       <div class="trust-item-number">One</div>
       <div class="trust-item-label">Point of Contact</div>
     </div>
@@ -705,8 +713,8 @@
   <div class="section-inner">
     <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:20px;">
       <div>
-        <span class="eyebrow" style="color:var(--color-oak);">Selected Work</span>
-        <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:12px;">
+        <span class="eyebrow reveal" style="color:var(--color-oak);">Selected Work</span>
+        <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:12px;">
           Every room, reimagined.
         </h2>
       </div>
@@ -837,22 +845,22 @@
   <div class="section-inner">
     <div class="value-prop-grid">
       <div>
-        <span class="eyebrow">Why A&amp;B</span>
-        <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,52px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin:16px 0 28px;">
+        <span class="eyebrow reveal">Why A&amp;B</span>
+        <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,52px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin:16px 0 28px;">
           One renovator.<br>Everything included.
         </h2>
-        <p style="color:var(--color-text-muted); margin-bottom:18px; font-size:16px;">
+        <p class="reveal reveal-delay-2" style="color:var(--color-text-muted); margin-bottom:18px; font-size:16px;">
           Most builders leave you with a shell. You spend weeks chasing a separate painter, a flooring fitter, a joinery company — coordinating schedules, managing disputes, absorbing surprise costs.
         </p>
-        <p style="color:var(--color-text-muted); margin-bottom:18px; font-size:16px;">
+        <p class="reveal reveal-delay-3" style="color:var(--color-text-muted); margin-bottom:18px; font-size:16px;">
           We built A&amp;B to close that gap entirely. From the structural groundwork to the final coat of paint on your skirting boards, every trade is managed under one roof, one contract, one price.
         </p>
-        <p style="color:var(--color-text-muted); font-size:16px;">
+        <p class="reveal reveal-delay-4" style="color:var(--color-text-muted); font-size:16px;">
           The result is a home that is finished. Not 90% finished. Finished.
         </p>
       </div>
       <div>
-        <div class="value-prop-pullquote">
+        <div class="value-prop-pullquote reveal-right">
           "The price we quote is the price you pay. We've never sent a surprise invoice and we never will."
         </div>
         <div style="margin-top:48px; padding:28px; background:var(--color-offwhite); border-radius:2px; box-shadow:var(--shadow-card);">
@@ -885,14 +893,14 @@
 ══════════════════════════════════════════ -->
 <section class="section" style="background:var(--color-offwhite);">
   <div class="section-inner">
-    <span class="eyebrow">What We Build</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:480px;">
+    <span class="eyebrow reveal">What We Build</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:480px;">
       Three specialisations.<br>One fixed price.
     </h2>
     <div class="services-grid">
 
       <!-- 01 Attic Conversions -->
-      <div class="service-tile">
+      <div class="service-tile reveal reveal-delay-1">
         <div class="service-tile-img-wrap">
           <span class="service-num">01</span>
           <img src="images/web/attic-conversion-hero.jpg" alt="Luxury attic en-suite with marble tiles and LED mirror" loading="lazy" decoding="async" />
@@ -906,7 +914,7 @@
       </div>
 
       <!-- 02 Kitchen Renovations -->
-      <div class="service-tile">
+      <div class="service-tile reveal reveal-delay-2">
         <div class="service-tile-img-wrap">
           <span class="service-num">02</span>
           <img src="images/web/kitchen-clondalkin-1.webp" alt="Bespoke sage green shaker kitchen with island and oak worktop" loading="lazy" decoding="async" />
@@ -919,7 +927,7 @@
       </div>
 
       <!-- 03 Extensions -->
-      <div class="service-tile">
+      <div class="service-tile reveal reveal-delay-3">
         <div class="service-tile-img-wrap">
           <span class="service-num">03</span>
           <img src="images/web/extension-hero.jpg" alt="Rear home extension with glazed sliding doors opening to garden" loading="lazy" decoding="async" />
@@ -940,32 +948,32 @@
 ══════════════════════════════════════════ -->
 <section class="section" style="background:var(--color-charcoal);">
   <div class="section-inner">
-    <span class="eyebrow" style="color:var(--color-oak);">How We Work</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:480px;">
+    <span class="eyebrow reveal" style="color:var(--color-oak);">How We Work</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:480px;">
       Start to finish,<br>without the stress.
     </h2>
     <div class="process-steps">
-      <div class="process-step">
+      <div class="process-step reveal reveal-delay-1">
         <div class="process-number">01</div>
         <div class="process-title" style="color:var(--color-offwhite);">Consultation</div>
         <div class="process-desc" style="color:rgba(247,244,240,0.58);">Virtual or on-site. We listen, assess the space, and understand what you want to achieve.</div>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal reveal-delay-2">
         <div class="process-number">02</div>
         <div class="process-title" style="color:var(--color-offwhite);">3D Design</div>
         <div class="process-desc" style="color:rgba(247,244,240,0.58);">We produce detailed 3D visuals so you can see exactly how your space will look before a single wall is touched.</div>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal reveal-delay-3">
         <div class="process-number">03</div>
         <div class="process-title" style="color:var(--color-offwhite);">Fixed Quote</div>
         <div class="process-desc" style="color:rgba(247,244,240,0.58);">One itemised quote covering every trade. No hidden costs, no additions — the number you sign is the number you pay.</div>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal reveal-delay-4">
         <div class="process-number">04</div>
         <div class="process-title" style="color:var(--color-offwhite);">The Build</div>
         <div class="process-desc" style="color:rgba(247,244,240,0.58);">Our own team handles all structural, electrical, plumbing, flooring, joinery, and painting works.</div>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal reveal-delay-5">
         <div class="process-number">05</div>
         <div class="process-title" style="color:var(--color-offwhite);">Handover</div>
         <div class="process-desc" style="color:rgba(247,244,240,0.58);">A snag-free, fully finished home. We don't leave until every detail meets the A&amp;B standard.</div>
@@ -979,11 +987,11 @@
 ══════════════════════════════════════════ -->
 <section class="section design-slider-section">
   <div class="section-inner">
-    <span class="eyebrow" style="color:var(--color-oak);">3D Design Process</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:560px;">
+    <span class="eyebrow reveal" style="color:var(--color-oak);">3D Design Process</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:560px;">
       See your space before we build it.
     </h2>
-    <p style="color:var(--color-text-muted); font-size:15px; margin-top:16px; max-width:520px;">
+    <p class="reveal reveal-delay-2" style="color:var(--color-text-muted); font-size:15px; margin-top:16px; max-width:520px;">
       Every project starts with a full 3D design so you can visualise exactly how your attic conversion will look — from the structural frame right through to the finished roof.
     </p>
 
@@ -1027,11 +1035,11 @@
 ══════════════════════════════════════════ -->
 <section class="section lead-form-section" id="lead-form">
   <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow" style="color:var(--color-oak);">Free Estimate</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px;">
+    <span class="eyebrow reveal" style="color:var(--color-oak);">Free Estimate</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px;">
       Tell us about your project.
     </h2>
-    <p style="font-family:'DM Sans',sans-serif; font-size:16px; color:rgba(247,244,240,0.6); margin-top:12px; max-width:480px; margin-left:auto; margin-right:auto;">
+    <p class="reveal reveal-delay-2" style="font-family:'DM Sans',sans-serif; font-size:16px; color:rgba(247,244,240,0.6); margin-top:12px; max-width:480px; margin-left:auto; margin-right:auto;">
       Takes under 2 minutes. We'll be back in touch via WhatsApp within 24 hours.
     </p>
   </div>
@@ -1240,12 +1248,12 @@
 ══════════════════════════════════════════ -->
 <section class="section testimonials">
   <div class="section-inner">
-    <span class="eyebrow">Client Stories</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:460px;">
+    <span class="eyebrow reveal">Client Stories</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:460px;">
       In their own words.
     </h2>
     <div class="testimonials-grid">
-      <div class="testimonial-card">
+      <div class="testimonial-card reveal reveal-delay-1">
         <div class="testimonial-stars" aria-label="5 out of 5 stars">
           <svg viewBox="0 0 14 14"><path d="M7 1l1.5 4H13L9.5 8l1.5 4L7 10l-4 2 1.5-4L1 5h4.5z"/></svg>
           <svg viewBox="0 0 14 14"><path d="M7 1l1.5 4H13L9.5 8l1.5 4L7 10l-4 2 1.5-4L1 5h4.5z"/></svg>
@@ -1256,7 +1264,7 @@
         <div class="testimonial-quote">"We'd had two builders pull out halfway through. A&amp;B quoted us, started on the day they said they would, and handed over a fully finished attic room six weeks later. No stress. No extra invoices."</div>
         <div class="testimonial-author">Sarah &amp; Tom K. — Ranelagh, Dublin 6</div>
       </div>
-      <div class="testimonial-card">
+      <div class="testimonial-card reveal reveal-delay-2">
         <div class="testimonial-stars" aria-label="5 out of 5 stars">
           <svg viewBox="0 0 14 14"><path d="M7 1l1.5 4H13L9.5 8l1.5 4L7 10l-4 2 1.5-4L1 5h4.5z"/></svg>
           <svg viewBox="0 0 14 14"><path d="M7 1l1.5 4H13L9.5 8l1.5 4L7 10l-4 2 1.5-4L1 5h4.5z"/></svg>
@@ -1627,6 +1635,17 @@
       slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
     });
   })();
+
+  // ─── Scroll Reveal ───
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

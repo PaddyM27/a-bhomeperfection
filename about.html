@@ -115,6 +115,14 @@
     .whatsapp-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); opacity: 0.92; }
     .whatsapp-cta svg { width: 18px; height: 18px; fill: white; }
 
+    /* ── Scroll Reveal ── */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal-left { opacity:0; transform:translateX(-36px); transition:opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal-right { opacity:0; transform:translateX(36px); transition:opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity:1; transform:translate(0,0); }
+    .reveal-delay-1 { transition-delay:80ms; } .reveal-delay-2 { transition-delay:160ms; } .reveal-delay-3 { transition-delay:240ms; }
+    @media (prefers-reduced-motion:reduce) { .reveal,.reveal-left,.reveal-right { opacity:1; transform:none; transition:none; } }
+
     /* Footer */
     footer { background: var(--color-charcoal); color: var(--color-offwhite); padding: 64px 0 32px; }
     .footer-grid { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; }
@@ -178,11 +186,11 @@
     </div>
   </div>
   <div class="hero-text">
-    <span class="eyebrow" style="color:rgba(160,120,80,0.8);">Who We Are</span>
-    <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(56px,6vw,80px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.04em; line-height:1.0; margin-top:16px; margin-bottom:24px;">
+    <span class="eyebrow reveal" style="color:rgba(160,120,80,0.8);">Who We Are</span>
+    <h1 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(56px,6vw,80px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.04em; line-height:1.0; margin-top:16px; margin-bottom:24px;">
       We're A&amp;B.
     </h1>
-    <p style="font-family:'DM Sans',sans-serif; font-size:17px; color:rgba(247,244,240,0.65); line-height:1.75; max-width:440px;">
+    <p class="reveal reveal-delay-2" style="font-family:'DM Sans',sans-serif; font-size:17px; color:rgba(247,244,240,0.65); line-height:1.75; max-width:440px;">
       A Dublin renovation company built to do one thing well: take a home from first sketch to final lick of paint, under one roof, one contract, one fixed price.
     </p>
   </div>
@@ -194,14 +202,14 @@
 <section style="padding:100px 0; background:var(--color-offwhite);">
   <div class="section-inner">
     <div class="story-body">
-      <span class="eyebrow">Our Story</span>
-      <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:40px; max-width:560px;">
+      <span class="eyebrow reveal">Our Story</span>
+      <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:40px; max-width:560px;">
         Why we built it differently.
       </h2>
       <p>We watched homeowners go through the same painful experience again and again. They'd hire a builder for the structure, then spend weeks chasing a separate painter, a flooring fitter, a joinery company — each one on a different schedule, each one with their own invoice. The house would sit 90% finished for months while trades played phone-tag.</p>
       <p>We started A&amp;B to close that gap. Not by subcontracting more aggressively, but by building a team that could handle every stage internally. Our joiners, painters, tilers, and floor fitters all work under the same roof. When one stage finishes, the next starts — no waiting, no excuses.</p>
 
-      <div class="pull-quote">
+      <div class="pull-quote reveal">
         "A home that is 90% finished is not a finished home. We don't hand over keys until every detail is done."
       </div>
 
@@ -216,22 +224,22 @@
 ══════════════════════════════════════════ -->
 <section style="padding:96px 0; background:var(--color-offwhite-2);">
   <div class="section-inner">
-    <span class="eyebrow">What Sets Us Apart</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:480px;">
+    <span class="eyebrow reveal">What Sets Us Apart</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; max-width:480px;">
       The A&amp;B difference.
     </h2>
     <div class="values-grid">
-      <div class="value-item">
+      <div class="value-item reveal reveal-delay-1">
         <div class="value-number">01</div>
         <div class="value-title">Everything included</div>
         <div class="value-desc">Painting, flooring, joinery — always in the quote. We don't leave you to organise the last 20% yourself. That's the Contractor Gap we built A&amp;B to close.</div>
       </div>
-      <div class="value-item">
+      <div class="value-item reveal reveal-delay-2">
         <div class="value-number">02</div>
         <div class="value-title">Fixed price, always</div>
         <div class="value-desc">The number you sign is the number you pay. If scope changes, we tell you before we act — not after. No surprises, no additions, no exceptions.</div>
       </div>
-      <div class="value-item">
+      <div class="value-item reveal reveal-delay-3">
         <div class="value-number">03</div>
         <div class="value-title">One point of contact</div>
         <div class="value-desc">You have a named project lead on WhatsApp throughout. They coordinate every trade, every delivery, every inspection — so you don't have to.</div>
@@ -246,10 +254,10 @@
 <section style="padding:96px 0; background:var(--color-offwhite);">
   <div class="section-inner">
     <div class="lead-grid">
-      <div class="lead-portrait">
+      <div class="lead-portrait reveal-left">
         <img src="images/web/team-artiom.webp" alt="Artiom Brieleanu — project lead, available on WhatsApp throughout your project" loading="lazy" decoding="async" />
       </div>
-      <div>
+      <div class="reveal-right">
         <span class="eyebrow">Your Project Lead</span>
         <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(32px,3.5vw,48px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:20px;">
           One person.<br>Full accountability.
@@ -274,12 +282,12 @@
 ══════════════════════════════════════════ -->
 <section style="padding:96px 0; background:var(--color-offwhite-2);">
   <div class="section-inner">
-    <span class="eyebrow">The Team</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:56px; max-width:480px;">
+    <span class="eyebrow reveal">The Team</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:56px; max-width:480px;">
       The people behind the work.
     </h2>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:48px;">
-      <div>
+      <div class="reveal reveal-delay-1">
         <div style="border-radius:2px; overflow:hidden; margin-bottom:24px;">
           <img src="images/web/team-artiom.webp" alt="Artiom Brieleanu — Founder" style="width:100%; display:block; aspect-ratio:3/4; object-fit:cover;" loading="lazy" decoding="async" />
         </div>
@@ -287,7 +295,7 @@
         <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-oak); margin-bottom:14px;">Founder</div>
         <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:var(--color-text-muted); line-height:1.75;">Artiom established A&amp;B with a vision to deliver high-quality work built on trust and attention to detail. With years of industry experience, he has built a strong reputation for consistently delivering to the highest standard.</p>
       </div>
-      <div>
+      <div class="reveal reveal-delay-2">
         <div style="border-radius:2px; overflow:hidden; margin-bottom:24px;">
           <img src="images/web/team-vasile.webp" alt="Vasile Braileanu — Specialist" style="width:100%; display:block; aspect-ratio:3/4; object-fit:cover;" loading="lazy" decoding="async" />
         </div>
@@ -295,7 +303,7 @@
         <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-oak); margin-bottom:14px;">Specialist</div>
         <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:var(--color-text-muted); line-height:1.75;">Vasile brings extensive hands-on experience and a strong practical approach to every project. His background in construction, combined with his focus on quality and detail, helps maintain the high standards A&amp;B is known for.</p>
       </div>
-      <div>
+      <div class="reveal reveal-delay-3">
         <div style="border-radius:2px; overflow:hidden; margin-bottom:24px;">
           <img src="images/web/team-lilian.webp" alt="Lilian Braileanu — Designer" style="width:100%; display:block; aspect-ratio:3/4; object-fit:cover;" loading="lazy" decoding="async" />
         </div>
@@ -312,8 +320,8 @@
 ══════════════════════════════════════════ -->
 <section class="timeline">
   <div class="section-inner" style="position:relative;">
-    <span class="eyebrow" style="color:rgba(160,120,80,0.8);">Our Journey</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:64px; max-width:480px;">
+    <span class="eyebrow reveal" style="color:rgba(160,120,80,0.8);">Our Journey</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,50px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:64px; max-width:480px;">
       Built over a decade of Dublin renovations.
     </h2>
 
@@ -373,14 +381,14 @@
 ══════════════════════════════════════════ -->
 <section style="padding:100px 0; background:var(--color-offwhite); text-align:center;">
   <div class="section-inner">
-    <span class="eyebrow">Start Your Project</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,56px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:16px; max-width:600px; margin-left:auto; margin-right:auto;">
+    <span class="eyebrow reveal">Start Your Project</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,56px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:16px; max-width:600px; margin-left:auto; margin-right:auto;">
       Every project starts with a single conversation.
     </h2>
-    <p style="font-family:'DM Sans',sans-serif; font-size:16px; color:var(--color-text-muted); max-width:440px; margin:0 auto 36px; line-height:1.7;">
+    <p class="reveal reveal-delay-2" style="font-family:'DM Sans',sans-serif; font-size:16px; color:var(--color-text-muted); max-width:440px; margin:0 auto 36px; line-height:1.7;">
       Tell us about your space and we'll be back with a free, detailed estimate within 24 hours.
     </p>
-    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+    <div class="reveal reveal-delay-3" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
       <a href="tel:+353XXXXXXXXX" class="btn-primary">Book a Consultation</a>
       <a href="portfolio.html" class="btn-ghost-dark">View Our Work</a>
     </div>
@@ -424,6 +432,11 @@
   hamburger.addEventListener('click', () => { const isOpen = mobileMenu.classList.toggle('open'); hamburger.classList.toggle('open', isOpen); hamburger.setAttribute('aria-expanded', String(isOpen)); document.body.style.overflow = isOpen ? 'hidden' : ''; });
   function closeMobileMenu() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
 
+  // ── Scroll Reveal ──
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

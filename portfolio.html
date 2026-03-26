@@ -107,6 +107,14 @@
     /* CTA strip */
     .cta-strip { padding: 96px 0; background: var(--color-offwhite); text-align: center; }
 
+    /* ── Scroll Reveal ── */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal-left { opacity:0; transform:translateX(-36px); transition:opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal-right { opacity:0; transform:translateX(36px); transition:opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity:1; transform:translate(0,0); }
+    .reveal-delay-1 { transition-delay:80ms; } .reveal-delay-2 { transition-delay:160ms; } .reveal-delay-3 { transition-delay:240ms; }
+    @media (prefers-reduced-motion:reduce) { .reveal,.reveal-left,.reveal-right { opacity:1; transform:none; transition:none; } }
+
     /* Footer */
     footer { background: var(--color-charcoal); color: var(--color-offwhite); padding: 64px 0 32px; }
     .footer-grid { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; }
@@ -161,11 +169,11 @@
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="section-inner">
-    <span class="eyebrow" style="color:rgba(160,120,80,0.8);">Our Work</span>
-    <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(56px,8vw,96px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.04em; line-height:0.95; margin-top:12px;">
+    <span class="eyebrow reveal" style="color:rgba(160,120,80,0.8);">Our Work</span>
+    <h1 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(56px,8vw,96px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.04em; line-height:0.95; margin-top:12px;">
       Transformations.
     </h1>
-    <p style="font-family:'DM Sans',sans-serif; font-size:16px; color:rgba(247,244,240,0.55); margin-top:20px; max-width:520px; line-height:1.7;">
+    <p class="reveal reveal-delay-2" style="font-family:'DM Sans',sans-serif; font-size:16px; color:rgba(247,244,240,0.55); margin-top:20px; max-width:520px; line-height:1.7;">
       Every project below was designed, built, and finished by our team — from structural works to the final coat of paint.
     </p>
   </div>
@@ -185,7 +193,7 @@
 <main>
   <div class="masonry" id="masonryGrid" aria-label="Portfolio projects">
 
-    <div class="masonry-item" data-category="attic">
+    <div class="masonry-item reveal" data-category="attic">
       <img src="images/web/attic-bathroom-marble.webp" alt="Attic conversion — Adamstown, Dublin. Luxury en-suite with marble tiles and LED lighting." fetchpriority="high" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Attic Conversion</div>
@@ -193,7 +201,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="kitchen">
+    <div class="masonry-item reveal reveal-delay-1" data-category="kitchen">
       <img src="images/web/kitchen-clondalkin-1.webp" alt="Kitchen renovation — Clondalkin, Dublin. Sage green shaker cabinetry with island." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Kitchen Renovation</div>
@@ -201,7 +209,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="extension">
+    <div class="masonry-item reveal reveal-delay-2" data-category="extension">
       <img src="images/extension-dun-laoghaire-1.jpg" alt="Home extension — Dún Laoghaire, Dublin. Rear extension with sliding glass doors." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Extension</div>
@@ -209,7 +217,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="attic">
+    <div class="masonry-item reveal" data-category="attic">
       <img src="images/web/attic-bedroom-clean.webp" alt="Attic conversion — Adamstown, Dublin. Clean bedroom with natural light and timber flooring." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Attic Conversion</div>
@@ -217,7 +225,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="kitchen">
+    <div class="masonry-item reveal reveal-delay-1" data-category="kitchen">
       <img src="images/web/kitchen-tallaght-2.webp" alt="Kitchen renovation — Tallaght, Dublin. Modern grey handleless kitchen with marble splashback." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Kitchen Renovation</div>
@@ -225,7 +233,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="extension">
+    <div class="masonry-item reveal reveal-delay-2" data-category="extension">
       <img src="images/extension-dun-laoghaire-2.jpg" alt="Home extension — Dún Laoghaire, Dublin. Extension with garden access." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Extension</div>
@@ -233,7 +241,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="attic">
+    <div class="masonry-item reveal" data-category="attic">
       <img src="images/web/attic-storage-shelving.webp" alt="Attic conversion — Adamstown, Dublin. Custom built-in shelving and storage." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Attic Conversion</div>
@@ -241,7 +249,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="kitchen">
+    <div class="masonry-item reveal reveal-delay-1" data-category="kitchen">
       <img src="images/web/kitchen-shankill-1.webp" alt="Kitchen renovation — Shankill, Dublin. Light grey modern kitchen." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Kitchen Renovation</div>
@@ -249,7 +257,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="extension">
+    <div class="masonry-item reveal reveal-delay-2" data-category="extension">
       <img src="images/web/attic-citywest-storage.webp" alt="Attic conversion — Citywest, Dublin. Fitted white storage with timber accent wall." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Extension</div>
@@ -257,7 +265,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="attic">
+    <div class="masonry-item reveal" data-category="attic">
       <img src="images/web/attic-adamstown2-1.webp" alt="Attic conversion — Adamstown, Dublin." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Attic Conversion</div>
@@ -265,7 +273,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="kitchen">
+    <div class="masonry-item reveal reveal-delay-1" data-category="kitchen">
       <img src="images/web/kitchen-clondalkin-2.webp" alt="Kitchen renovation — Clondalkin, Dublin." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Kitchen Renovation</div>
@@ -273,7 +281,7 @@
       </div>
     </div>
 
-    <div class="masonry-item" data-category="extension">
+    <div class="masonry-item reveal reveal-delay-2" data-category="extension">
       <img src="images/web/kitchen-tallaght-1.webp" alt="Kitchen renovation — Tallaght, Dublin. Grey handleless units with Bosch appliances." loading="lazy" decoding="async" />
       <div class="masonry-overlay">
         <div class="masonry-cat">Extension</div>
@@ -287,12 +295,12 @@
 <!-- Before / After Section -->
 <section class="before-after-section">
   <div class="section-inner">
-    <span class="eyebrow" style="color:var(--color-oak);">Before &amp; After</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,52px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:48px;">
+    <span class="eyebrow reveal" style="color:var(--color-oak);">Before &amp; After</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,52px); font-weight:500; color:var(--color-offwhite); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:48px;">
       The transformation in full.
     </h2>
 
-    <div class="ba-card">
+    <div class="ba-card reveal reveal-delay-2">
       <div class="ba-side">
         <img src="images/web/before-attic-wicklow.webp" alt="Attic before conversion — Wicklow. Raw attic with exposed beams and rubble." />
         <span class="ba-label">Before</span>
@@ -304,7 +312,7 @@
       </div>
     </div>
 
-    <div class="ba-card">
+    <div class="ba-card reveal reveal-delay-1">
       <div class="ba-side">
         <img src="images/web/before-kitchen-tallaght.webp" alt="Kitchen before renovation — Tallaght. Old dated kitchen before renovation." />
         <span class="ba-label">Before</span>
@@ -321,14 +329,14 @@
 <!-- CTA Strip -->
 <section class="cta-strip">
   <div class="section-inner">
-    <span class="eyebrow">Start Your Project</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,52px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:16px;">
+    <span class="eyebrow reveal">Start Your Project</span>
+    <h2 class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,52px); font-weight:500; color:var(--color-charcoal); letter-spacing:-0.03em; line-height:1.1; margin-top:16px; margin-bottom:16px;">
       Ready to see what's possible?
     </h2>
-    <p style="font-family:'DM Sans',sans-serif; font-size:16px; color:var(--color-text-muted); max-width:480px; margin:0 auto 32px; line-height:1.7;">
+    <p class="reveal reveal-delay-2" style="font-family:'DM Sans',sans-serif; font-size:16px; color:var(--color-text-muted); max-width:480px; margin:0 auto 32px; line-height:1.7;">
       Tell us about your space and we'll put together a free, no-obligation estimate.
     </p>
-    <a href="index.html#lead-form" class="btn-primary">Get a Free Estimate</a>
+    <a href="index.html#lead-form" class="btn-primary reveal reveal-delay-3">Get a Free Estimate</a>
   </div>
 </section>
 
@@ -403,6 +411,17 @@
       });
     });
   });
+
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
